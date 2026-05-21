@@ -21,7 +21,7 @@ while video.isOpened():
     try:
         frame = lanes.canny(frame)
         frame = lanes.mask(frame)
-        detected_lines = cv.HoughLinesP(frame, 2, np.pi / 180, 100, np.array([()]), minLineLength=20, maxLineGap=5)
+        detected_lines = cv.HoughLinesP(frame, 1, np.pi / 180, 50, np.array([()]), minLineLength=30, maxLineGap=150)
         average_lanes = lanes.average_slope_intercept(frame, detected_lines)
         line_image = lanes.display_lines(copy_img, average_lanes)
         filled = lanes.fill_lane(copy_img, average_lanes)
