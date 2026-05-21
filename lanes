@@ -2,9 +2,9 @@ import cv2 as cv
 import numpy as np
 from collections import deque
 
-# История последних 10 кадров чтобы линии не пропадали
-_left_history  = deque(maxlen=10)
-_right_history = deque(maxlen=10)
+# История последних 50 кадров чтобы линии не пропадали
+_left_history  = deque(maxlen=50)
+_right_history = deque(maxlen=50)
 
 def canny(img):
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
