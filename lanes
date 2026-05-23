@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 from collections import deque
 
-# История последних 50 кадров чтобы линии не пропадали
+# История последних 20 кадров чтобы линии не пропадали
 _left_history  = deque(maxlen=50)
 _right_history = deque(maxlen=50)
 
@@ -85,7 +85,7 @@ def display_lines(image, lines):
     if lines is not None:
         for line in lines:
             x1, y1, x2, y2 = line
-            cv.line(line_image, (x1, y1), (x2, y2), (255, 255, 255), 15)
+            cv.line(line_image, (x1, y1), (x2, y2), (255, 255, 255), 10)
     return line_image
 
 def fill_lane(image, lines):
