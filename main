@@ -36,5 +36,5 @@ while video.isOpened():
     if cv.waitKey(1) & 0xFF == ord('q'):
         video.release()
         cv.destroyAllWindows()
-
+ 
 
